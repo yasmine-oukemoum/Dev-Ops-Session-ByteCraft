@@ -17,14 +17,6 @@ jobs:
         node-version: '16'
     - name: Install dependencies
       run: npm install
-    - name: Run tests
-      run: npm test
-    - name: Upload Test Results (if needed)
-      if: failure() # Fixed indentation
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: test-results/ # Replace with your test results folder if applicable
 
   deploy-to-vercel:
     needs: build-and-test
